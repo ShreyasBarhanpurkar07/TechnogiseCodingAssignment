@@ -1,0 +1,16 @@
+{
+  "name": "coding-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "jest": "^27.1.1",
+    "mock-argv": "^2.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
