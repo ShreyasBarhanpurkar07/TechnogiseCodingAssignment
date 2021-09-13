@@ -1,9 +1,5 @@
-const { 
-    prepareMatrix, 
-    main
-} = require('../main');
-
-// jest.mock('../main');
+const { Main } = require('../Main');
+const { Matrix } = require('../Matrix');
 
 const sampleMatrix = [
     [
@@ -103,65 +99,79 @@ const samplePawnValidResponse = ['C5'];
 
 describe('Test to check if matrix being prepared is correct', () => {
   test('Testing Prepare Matrix', async () => {
-      const response = await prepareMatrix(8, 8);
-      expect(response).toEqual(sampleMatrix);
+    const matrixObj = new Matrix(8, 8)
+    const response = await matrixObj.prepareMatrix();
+    expect(response).toEqual(sampleMatrix);
   });
 });
 
 describe('Tests for Invalid Inputs from user', () => {
     test('Testing Invalid position', async () => {
-        const response = await main('king, d9');
+        const mainObj = new Main('king, d9');
+        const response = await mainObj.main();
         expect(response).toEqual('Invalid Position');
     });
     test('Testing Invalid position', async () => {
-      const response = await main('king, i5');
+      const mainObj = new Main('king, i5');
+      const response = await mainObj.main();
       expect(response).toEqual('Invalid Position');
     });
     test('Testing Invalid piece', async () => {
-      const response = await main('camel, e5');
+      const mainObj = new Main('camel, e5');
+      const response = await mainObj.main();
       expect(response).toEqual('Invalid Piece');
     });
     test('Testing Invalid piece and position', async () => {
-      const response = await main('camel, i5');
+      const mainObj = new Main('camel, i5');
+      const response = await mainObj.main();
       expect(response).toEqual('Invalid Piece and Position');
     });
     test('Testing Invalid input format', async () => {
-      const response = await main('king d5');
+      const mainObj = new Main('king d5');
+      const response = await mainObj.main();
       expect(response).toEqual('Please give input in proper format : <piece>, <position>');
     });
 });
 
 describe('Tests for valid Inputs from user', () => {
   test('Testing for pawn with available position', async () => {
-    const response = await main('pawn, c4');
+    const mainObj = new Main('pawn, c4');
+    const response = await mainObj.main();
     expect(response).toEqual(samplePawnValidResponse);
   });
   test('Testing for pawn with NO available position', async () => {
-    const response = await main('pawn, c8');
-    expect(response).toEqual([]);
+    const mainObj = new Main('pawn, c8');
+    const response = await mainObj.main();
+    expect(response).toEqual('No Positions Available');
   });
   test('Testing for king', async () => {
-    const response = await main('king, d5');
+    const mainObj = new Main('king, d5');
+    const response = await mainObj.main();
     expect(response).toEqual(sampleKingResponse);
   });
   test('Testing for queen', async () => {
-    const response = await main('queen, e4');
+    const mainObj = new Main('queen, e4');
+    const response = await mainObj.main();
     expect(response).toEqual(sampleQueenResponse);
   });
   test('Testing for queen at extreme right column', async () => {
-    const response = await main('queen, h4');
+    const mainObj = new Main('queen, h4');
+    const response = await mainObj.main();
     expect(response).toEqual(sampleForQueenAtExtremeRightColumn);
   });
   test('Testing for queen at extreme left column', async () => {
-    const response = await main('queen, a4');
+    const mainObj = new Main('queen, a4');
+    const response = await mainObj.main();
     expect(response).toEqual(sampleForQueenAtExtremeLeftColumn);
   });
   test('Testing for queen at extreme top row', async () => {
-    const response = await main('queen, c8');
+    const mainObj = new Main('queen, c8');
+    const response = await mainObj.main();
     expect(response).toEqual(sampleForQueenAtExtremeTopRow);
   });
   test('Testing for queen at extreme bottom row', async () => {
-    const response = await main('queen, d1');
+    const mainObj = new Main('queen, d1');
+    const response = await mainObj.main();
     expect(response).toEqual(sampleForQueenAtExtremeBottomRow);
   });
 });
