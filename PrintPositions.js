@@ -4,7 +4,7 @@ class PrintResult {
     }
 
     printResultToConsole () {
-        console.log('Available Positions: ', this.availablePositions);
+        console.log('Result: ', this.availablePositions);
     }
 };
 
