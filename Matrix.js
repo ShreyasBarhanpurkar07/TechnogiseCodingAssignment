@@ -18,8 +18,8 @@ class Matrix {
             }
         }
         return this.matrix;
-    };
-};
+    }
+}
 
 module.exports = {
     Matrix

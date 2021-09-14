@@ -6,7 +6,7 @@ class PrintResult {
     printResultToConsole () {
         console.log('Result: ', this.availablePositions);
     }
-};
+}
 
 module.exports = {
     PrintResult

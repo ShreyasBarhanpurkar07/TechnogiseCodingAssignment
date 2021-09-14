@@ -1,9 +1,11 @@
 *********************** Instructions to run the program ************************
 1) To run the program:
-    i) Open command prompt, go the project folder and run the command 'node Main.js'
-    ii) The console will ask you for input. Please enter the value in the format and then press enter: <Piece>, <Position>
+    i) Open command prompt, go the project folder
+    ii) run the 'npm i' command to install the required packages.
+    iii) run the command 'node Main.js'
+    iv) The console will ask you for input. Please enter the value in the format and then press enter: <Piece>, <Position>
         for e.g. King, d5
-    iii) You will get the output with the available positions for the piece from the entered position, or appropriate message if there are no available positions or entered input is incorrect.
+    v) You will get the output with the available positions for the piece from the entered position, or appropriate message if there are no available positions or entered input is incorrect.
 
 2) To run the test cases:
     Run the command 'npm test -- --coverage'. This will run the tests as well give a table of the test coverage report.

@@ -39,7 +39,7 @@ class Main {
             RL.close();
             return userInputObj.msg;
         }
-    };
+    }
 }
 
 

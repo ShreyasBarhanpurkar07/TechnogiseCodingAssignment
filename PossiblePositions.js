@@ -30,7 +30,7 @@ class PossiblePositions {
             }
         }
         return availablePosition;
-    };
+    }
 
     // Method used for getting the horizontal(left as well as right) avaliable positions 
     getAllHorizontalPositions (noOfMoves, currentPosition) {
@@ -56,7 +56,7 @@ class PossiblePositions {
             }
         }
         return availablePosition;
-    };
+    }
 
     // Method used to get left diagonal(top and bottom) available positions
     getLeftDiagonalPositions (row, col, noOfMoves) {
@@ -85,7 +85,7 @@ class PossiblePositions {
         }
         
         return availablePosition;
-    };
+    }
 
     // Method used to get right diagonal(top and bottom) available positions
     getRightDiagonalPositions (row, col, noOfMoves) {
@@ -113,7 +113,7 @@ class PossiblePositions {
             }
         }
         return availablePosition;
-    };
+    }
 
     // Method used to get the diagonal(both left and right) available positions
     getAllDiagonalPositions (noOfMoves, currentPosition) {
@@ -126,7 +126,7 @@ class PossiblePositions {
         availablePosition = availablePosition.concat(this.getRightDiagonalPositions(row, col, maxMoves));
         
         return availablePosition;
-    };
+    }
 
     // Method used to get all the available position based on current position.
     async getPossiblePositions () {
@@ -140,7 +140,7 @@ class PossiblePositions {
             possiblePositions = possiblePositions.concat(this.getAllDiagonalPositions(maxMoves, this.position));
         }
         return possiblePositions;
-    };
+    }
 }
 
 module.exports = {

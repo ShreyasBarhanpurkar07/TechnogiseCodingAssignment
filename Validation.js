@@ -49,7 +49,7 @@ class Validation {
             valid: false,
             msg: validationMsg === '' ? 'Please give input in proper format : <piece>, <position>' : validationMsg
         };
-    };
+    }
 }
 
 module.exports = {
