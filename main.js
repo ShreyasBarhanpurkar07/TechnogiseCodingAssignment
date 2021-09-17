@@ -27,7 +27,7 @@ class Main {
             const { piece } = userInputObj;
             const { position } = userInputObj;
             const possiblePositionsObj = new PossiblePositions(this.noOfRows, piece, position, this.matrix);
-            let availablePositions = await possiblePositionsObj.getPossiblePositions();
+            let availablePositions = await possiblePositionsObj.getAllPossiblePositions();
             availablePositions = availablePositions.length === 0 ? 'No Positions Available' : availablePositions;
             const printPositionsObj = new PrintResult(availablePositions);
             printPositionsObj.printResultToConsole();
